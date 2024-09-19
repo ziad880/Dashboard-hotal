@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كل البطاقات</title>
+    <title>ادخال نثرية</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
@@ -103,97 +103,109 @@
  <div class="content">
      <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">  بطاقات النظام -   كل البطاقات
-                    <a id="lf" href="system-cards.html"><i class="fa-solid fa-circle-right"></i></a>
+                <div class="breadcrumb-item">  النثرية  -    أضافة نثرية
+                    <a id="lf" href="expenses.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
                     
-                    <a href="all-cards.html"> كل البطاقات</a>
+                    <a href="add-expenses.html"> أضافة نثرية</a>
                     <p>/</p>
-                    <a href="system-cards.html">بطاقات النظام</a>
-                    <i class="fas fa-credit-card"></i>
+                    <a href="expenses.html">النثرية </a>
+                    <i class="fas fa-wallet"></i>
                 </div>
             </div>
         </div>
 
 
-    <table id="apartments-table" class="display">
-        <thead>
-            <tr>
-                <th>المستخدم</th>
-                <th>التاريخ</th>
-                <th>قراءة</th>
-                <th>أرشفة</th>
-            </tr>
-            
-        </thead>
-        <tbody>
-        <tr>
-            <td> -</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td> -</td>
-            <td> -</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+        <form id="rental-form">
+            <div class="form-group">
+                <label for="apartment">وصف النثرية:</label>
+                <input type="text" id="address" placeholder="أدخل الوصف " name="address" required>
+            </div>
 
+            <div class="form-group">
+                <label for="rent-amount">المبلغ :</label>
+                <input type="number" id="rent-amount" name="rent-amount" placeholder="أدخل مبلغ " required>
+            </div>
 
-<!-- إضافة المكاتب المطلوبة -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
-<!-- مكتبة PDFMake لتصدير PDF -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- DataTables -->
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<!-- DataTables Buttons -->
-<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
-<!-- JSZip (for Excel export) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<!-- PDFMake (for PDF export) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-<!-- Buttons for Excel and PDF export -->
-<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+            <div class="form-group">
+                <label for="start-date">التاريخ :</label>
+                <input type="text" id="start-date" name="start-date" placeholder="اختر تاريخ " required>
+            </div>
+            <div class="form-group">
+                <label for="missing-items">
+                       الملاحظات:
+                </label>
+                <textarea id="missing-items" name="missing-items" rows="4"></textarea>
+            </div>
+        
+            <div class="form-group">
+                <label for="contract">طباعة الوصل :</label>
+                <button type="button" id="print-contract" class="btn-print"><i class="fas fa-print"></i> طباعة الوصل </button>
+            </div>
 
+        </form>
+    </div>
+
+    <!-- المكاتب المطلوبة -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    
     <script>
-        $(document).ready(function() {
-            $('#apartments-table').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    {
-                        extend: 'excelHtml5',
-                        text: '<i class="fas fa-file-excel"></i> تصدير Excel',
-                        className: 'btn-export',
-                        titleAttr: 'تصدير إلى Excel'
-                    },
-                    {
-                        extend: 'pdfHtml5',
-                        text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
-                        className: 'btn-export',
-                        titleAttr: 'تصدير إلى PDF'
-                    }
-                ],
-              
-                
-            });
-        });
+$(document).ready(function() {
+    // تفعيل تقويم jQuery UI لتحديد تاريخ البداية
+    $("#start-date").datepicker({
+        dateFormat: "yy-mm-dd",
+        minDate: 0 // لمنع اختيار تاريخ قديم
+    });
+
+    // طباعة الوصل - استعراض الوصل عند الضغط على الزر
+    $("#print-contract").on("click", function() {
+        const address = $("#address").val();
+        const rentAmount = $("#rent-amount").val();
+        const startDate = $("#start-date").val();
+        const missingItems = $("#missing-items").val();
+
+        if (!address || !rentAmount || !startDate) {
+            alert("يرجى ملء جميع الحقول المطلوبة قبل الطباعة.");
+        } else {
+            const printContent = `
+                <div>
+                    <h2>وصل النثرية</h2>
+                    <p><strong>وصف النثرية:</strong> ${address}</p>
+                    <p><strong>المبلغ:</strong> ${rentAmount}</p>
+                    <p><strong>التاريخ:</strong> ${startDate}</p>
+                    <p><strong>الملاحظات:</strong> ${missingItems || "لا توجد ملاحظات"}</p>
+                </div>
+            `;
+            const newWindow = window.open();
+            newWindow.document.write(printContent);
+            newWindow.document.close();
+            newWindow.focus();
+            newWindow.print();
+            newWindow.close();
+        }
+    });
+
+    // تحقق من ملء جميع الحقول المطلوبة قبل إرسال النموذج
+    $("#rental-form").on("submit", function(e) {
+        e.preventDefault();
+        const address = $("#address").val();
+        const rentAmount = $("#rent-amount").val();
+        const startDate = $("#start-date").val();
+
+        if (address && rentAmount && startDate) {
+            alert("تم إضافة الوصل بنجاح!");
+            // يمكنك إرسال البيانات إلى الخادم باستخدام AJAX أو أي منطق آخر
+        } else {
+            alert("يرجى ملء جميع الحقول المطلوبة.");
+        }
+    });
+});
+
     </script>
+
 <script src="script.js"></script>
 
 </body>

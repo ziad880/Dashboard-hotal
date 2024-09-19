@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الشقق</title>
+    <title>اضافة شقة</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -42,7 +42,7 @@
             </label>
         </div>
         <div class="dashboard-text">
-            <span> أوروك للطيران</span>
+            <span> نظام إدارة تأجير العقارات</span>
         </div>
         <button class="sidebar-toggle" onclick="toggleSidebar()">
             <i class="fas fa-bars"></i>
@@ -59,52 +59,43 @@
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
             </div>
         </div>
-<ul class="sidebar-menu">
-    <li><a href="index.html" class="sidebar-item">
-        <i class="fas fa-home"></i> <span>الصفحة الرئيسية</span>
-    </a></li>
-    <li class="sidebar-item-with-submenu">
-        <a href="apartments.html" class="sidebar-item">
-            <i class="fas fa-building"></i> 
-            <span>الشقق</span>
-        </a>
-        <ul class="submenu">
-            <li><a href="add-apartment.html" class="sidebar-item">
-                <i class="fas fa-plus"></i> <span>إضافة شقة</span>
+        <ul class="sidebar-menu">
+            <li><a href="index.html" class="sidebar-item">
+                <i class="fas fa-home"></i> <span>الصفحة الرئيسية</span>
             </a></li>
-            <li><a href="all-apartments.html" class="sidebar-item">
-                <i class="fas fa-th-list"></i> <span>جميع الشقق</span>
+            <li class="sidebar-item-with-submenu">
+                <a href="apartments.html" class="sidebar-item">
+                    <i class="fas fa-building"></i> 
+                    <span>الشقق</span>
+                </a>
+                <ul class="submenu">
+                    <li><a href="add-apartment.html" class="sidebar-item">
+                        <i class="fas fa-plus"></i> <span>إضافة شقة</span>
+                    </a></li>
+                    <li><a href="all-apartments.html" class="sidebar-item">
+                        <i class="fas fa-th-list"></i> <span>جميع الشقق</span>
+                    </a></li>
+                </ul>
+            </li>
+            <li><a href="rental.html" class="sidebar-item">
+                <i class="fas fa-calendar-check"></i> <span>التأجير</span>
+            </a></li>
+            <li><a href="contracts.html" class="sidebar-item">
+                <i class="fas fa-file-signature"></i> <span>العقود</span>
+            </a></li>
+            <li><a href="owners.html" class="sidebar-item">
+                <i class="fas fa-users"></i> <span>أصحاب الشقق</span>
+            </a></li>
+            <li><a href="expenses.html" class="sidebar-item">
+                <i class="fas fa-wallet"></i> <span>النثرية</span>
+            </a></li>
+            <li><a href="rental-report.html" class="sidebar-item">
+                <i class="fas fa-chart-line"></i> <span>التقارير </span>
+            </a></li>
+            <li><a href="system-cards.html" class="sidebar-item">
+                <i class="fas fa-credit-card"></i> <span>بطاقات النظام</span>
             </a></li>
         </ul>
-    </li>
-    <li><a href="rental.html" class="sidebar-item">
-        <i class="fas fa-calendar-check"></i> <span>التأجير</span>
-    </a></li>
-    <li><a href="contracts.html" class="sidebar-item">
-        <i class="fas fa-file-signature"></i> <span>العقود</span>
-    </a></li>
-    <li><a href="owners.html" class="sidebar-item">
-        <i class="fas fa-users"></i> <span>أصحاب الشقق</span>
-    </a></li>
-    <li><a href="expenses.html" class="sidebar-item">
-        <i class="fas fa-wallet"></i> <span>النثرية</span>
-    </a></li>
-    <li><a href="rental-report.html" class="sidebar-item">
-        <i class="fas fa-chart-line"></i> <span>تقرير الإيجارات</span>
-    </a></li>
-    <li><a href="expenses-report.html" class="sidebar-item">
-        <i class="fas fa-chart-pie"></i> <span>تقرير المصاريف</span>
-    </a></li>
-    <li><a href="owners-report.html" class="sidebar-item">
-        <i class="fas fa-user-tag"></i> <span>تقرير أصحاب الشقق</span>
-    </a></li>
-    <li><a href="inventory.html" class="sidebar-item">
-        <i class="fas fa-clipboard-list"></i> <span>الجرد الكلي للشقق</span>
-    </a></li>
-    <li><a href="system-cards.html" class="sidebar-item">
-        <i class="fas fa-credit-card"></i> <span>بطاقات النظام</span>
-    </a></li>
-</ul>
     </nav>
 
     <div class="content">
@@ -124,8 +115,10 @@
        </div>
 
        <form  action="#" method="POST" enctype="multipart/form-data" class="">
+                <form class="rental-form" enctype="multipart/form-data">
+
         <!-- اسم الشقة -->
-        <div class="form-group">
+        <div class="rental-form">
             <label for="apartment-name">
                 <i class="fas fa-building icon"></i> اسم الشقة:
             </label>
@@ -133,7 +126,7 @@
         </div>
     
         <!-- العنوان -->
-        <div class="form-group">
+        <div class="rental-form">
             <label for="address">
                 <i class="fas fa-map-marker-alt icon"></i> العنوان:
             </label>
@@ -141,7 +134,7 @@
         </div>
     
         <!-- المجمع -->
-        <div class="form-group">
+        <div class="rental-form">
             <label for="complex">
                 <i class="fas fa-city icon"></i> المجمع:
             </label>
@@ -149,7 +142,7 @@
         </div>
     
         <!-- البناية -->
-        <div class="form-group">
+        <div class="rental-form">
             <label for="building">
                 <i class="fas fa-warehouse icon"></i> مستقل، بناية:
             </label>
@@ -160,7 +153,7 @@
         </div>
     
         <!-- التعاقد -->
-        <div class="form-group">
+        <div class="rental-form">
             <label for="contract-type">
                 <i class="fas fa-file-contract icon"></i> التعاقد:
             </label>
@@ -171,7 +164,7 @@
         </div>
     
         <!-- صور الشقة -->
-        <div class="form-group">
+        <div class="rental-form">
             <label for="apartment-photos">
                 <i class="fas fa-camera icon"></i> صور الشقة:
             </label>
@@ -179,13 +172,19 @@
         </div>
     
         <!-- حالة الشقة -->
-        <div class="checkbox-group">
-            <input type="checkbox" id="apartment-ready" name="apartment-ready">
-            <label for="apartment-ready">الشقة جاهزة</label>
+                <div class="rental-form">
+            <label for="contract-type">
+                <i class="fas fa-check icon"></i> حالة الشقة:
+            </label>
+            <select id="apartment-ready" name="apartment-ready" required>
+                <option value="ready">الشقة جاهزة</option>
+                <option value="not-ready">الشقة غير جاهزة</option>
+            </select>
         </div>
+   
     
         <!-- النواقص والملاحظات -->
-        <div class="form-group">
+        <div class="rental-form">
             <label for="missing-items">
                 <i class="fas fa-exclamation-triangle icon"></i> النواقص والملاحظات:
             </label>
@@ -193,7 +192,7 @@
         </div>
     
         <!-- زر الإرسال -->
-        <div class="form-group">
+        <div class="rental-form">
             <button type="submit" class="btn-submit">
                 <i class="fas fa-save"></i> حفظ الشقة
             </button>
