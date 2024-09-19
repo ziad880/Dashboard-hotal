@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جميع الشقق المؤجرة</title>
+    <title>جميع أصحاب الشقق</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 <body>
     <div class="header">
@@ -94,85 +93,98 @@
  <div class="content">
      <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">  التأجبر -   جميع الشقق المؤجرة
-                    <a id="lf" href="rental.html"><i class="fa-solid fa-circle-right"></i></a>
+                <div class="breadcrumb-item">  أصحاب الشقق -  الجميع  
+                    <a id="lf" href="owners.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
                     
-                    <a href="all-rent-appartment.html">جميع الشقق المؤجرة</a>
+                    <a href="All-apartment-owners.html">الجميع </a>
                     <p>/</p>
-                    <a href="rental.html">التأجبر</a>
-                    <i class="fas fa-calendar-check"></i>
+                    <a href="owners.html">أصحاب الشقق</a>
+                    <i class="fas fa-users"></i>
                 </div>
             </div>
         </div>
 
-        <!-- جدول الشقق -->
-        <table id="apartments-table" class="display">
-            <thead>
-                <tr>
-                    <th>الإجراءات</th>
-                    <th>المستخدم</th>
-                    <th>التاريخ</th>
-                    <th>ربح المكتب</th>
-                    <th>المبلغ المتبقي</th>
-                    <th>المبلغ المدفوع</th>
-                    <th>المبلغ الكلي</th>
-                    <th>اسم الشقة</th>
-                </tr>
-                
-            </thead>
-            <tbody>
-                <!-- الصفوف الديناميكية -->
-                <tr>
-                    <td class="action-btns">
-                        <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
-                        <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
-                        <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل التأجير</button>
-                    </td>
-                    <td>محمد حامد</td>
-                    <td>18/9/2024</td>
-                    <td>1000</td>
-                    <td>5000</td>
-                    <td>5000</td>
-                    <td>10000</td>
-                    <td>شقة 1</td>
-                </tr>
-                
-                <tr>
-                    <td class="action-btns">
-                        <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
-                        <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
-                        <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل التأجير</button>
-                    </td>
-                    <td>زياد أيمن</td>
-                    <td>18/9/2024</td>
-                    <td>1500</td>
-                    <td>5000</td>
-                    <td>10000</td>
-                    <td>15000</td>
-                    <td>شقة 2</td>
-                </tr>
-                
-                <!-- المزيد من الصفوف -->
-            </tbody>
-        </table>
-    </div>
+    <!-- جدول الشقق -->
+    <table id="rental-table" class="display">
+        <thead>
+            <tr>
+                <th>الخيارات</th>
+                <th>المستخدم</th>
+                <th>أسم الشقة </th>
+                <th>مبلغ الإيجار</th>
+                <th>حالة الدفع</th>
+                <th>طريقة الدفع</th>
+                <th>تاريخ الدفع</th>
 
-    <!-- إضافة المكاتب المطلوبة -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    
-    <script>
+                <th>طريقة الدفع</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+        <!-- الصفوف الديناميكية -->
+        <tr>
+            <td class="action-btns">
+                <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
+                <button class="btn-print"><i class="fas fa-print"></i> طباعة</button>
+            </td>
+            <td>admin</td>
+            <td>-</td>
+            <td>-</td>
+            <td>- </td>
+            <td>-</td>
+            <td>-</td>
+            <td>- </td>
+        </tr>
+        <tr>
+            <td class="action-btns">
+                <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
+                <button class="btn-print"><i class="fas fa-print"></i> طباعة</button>
+            </td>
+            <td>admin</td>
+            <td>-</td>
+            <td>-</td>
+            <td>- </td>
+            <td>-</td>
+            <td>-</td>
+            <td>- </td>
+        </tr>
+        
+        <!-- المزيد من الصفوف -->
+        </tbody>
+    </table>
+</div>
+
+<!-- إضافة المكاتب المطلوبة -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+<!-- مكتبة PDFMake لتصدير PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- DataTables -->
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<!-- DataTables Buttons -->
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+<!-- JSZip (for Excel export) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<!-- PDFMake (for PDF export) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<!-- Buttons for Excel and PDF export -->
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+
+ <script>
         $(document).ready(function() {
-            $('#apartments-table').DataTable({
+            $('#rental-table').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     {
@@ -188,22 +200,39 @@
                         titleAttr: 'تصدير إلى PDF'
                     }
                 ],
-                language: {
-                    "lengthMenu": "عرض _MENU_ شقق لكل صفحة",
-                    "zeroRecords": "لا توجد شقق متاحة",
-                    "info": "عرض الصفحة _PAGE_ من _PAGES_",
-                    "infoEmpty": "لا توجد شقق متاحة",
-                    "infoFiltered": "(تمت تصفية _MAX_ من الشقق)",
-                    "search": "بحث:",
-                    "paginate": {
-                        "next": "التالي",
-                        "previous": "السابق"
-                    }
-                }
+             
             });
         });
+        $(document).ready(function() {
+    $('#apartments-table').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'excelHtml5',
+                text: '<i class="fas fa-file-excel"></i> تصدير Excel',
+                className: 'btn-export',
+                titleAttr: 'تصدير إلى Excel'
+            },
+            {
+                extend: 'pdfHtml5',
+                text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
+                className: 'btn-export',
+                titleAttr: 'تصدير إلى PDF'
+            }
+        ],
+
+    });
+
+    // إضافة حدث طباعة عند الضغط على زر الطباعة
+    $(document).on('click', '.btn-print', function() {
+        window.print();
+    });
+});
+
     </script>
 
-    <script src="script.js"></script>
+
+<script src="script.js"></script>
+
 </body>
 </html>
