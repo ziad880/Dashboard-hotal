@@ -1838,6 +1838,9 @@ table.dataTable th,table.dataTable td {
     .dataTables_wrapper .dataTables_filter {
         margin-top: .5em
     }
+    .dataTables_wrapper .dataTables_filter input{
+        margin-bottom: 1em;
+    }
 }
 
 
@@ -1880,14 +1883,13 @@ table.dataTable th,table.dataTable td {
     .card {
         width: 48%;
     }
+    
+    
 }
-
 @media (min-width: 1024px) {
     .card {
         width: 30%;
     }}
-
-
 
     button {
             background-color: #000000;
@@ -1895,10 +1897,102 @@ table.dataTable th,table.dataTable td {
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            margin-top: 10px;
             color: #f6f6f6;
         }
 
 button:hover {
     background-color: #000000;
+}
+.dropbtn{
+    margin: 0;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#apartments-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; 
+}
+
+
+@media only screen and (max-width: 668px) {
+    .table-responsive {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch; 
+        white-space: nowrap;
+        touch-action: pan-x; 
+    }
+
+    #apartments-table {
+        display: block;
+        width: auto; 
+        white-space: nowrap; 
+    }
+
+
+    #apartments-table th, #apartments-table td {
+        font-size: 12px; 
+        padding: 8px;
+    }
+}
+@media (max-width: 668px) {
+
+    table {
+        display: block;
+        width: auto; 
+        white-space: nowrap; /
+    }
+    .btn-edit, .btn-delete,.btn-disable ,.btn-export{
+    margin-top: 0;
+    }
+    .btn-print,.btn-disable,.btn-export ,.btn-edit{
+        font-size: 12px; /* تصغير حجم الخط */
+        padding: 5px 10px; /* تقليل حجم التباعد الداخلي */
+        border-radius: 3px; /* تغيير حواف الزر */
+        width: auto; /* تعديل العرض */
+        height: auto; /* تعديل الارتفاع */
+    }
+    
+    .btn-print i,.btn-disable,.btn-export ,.btn-edit{
+        font-size: 10px; /* تصغير حجم الأيقونة */
+    }
+.btn-export{
+    margin-bottom: 0;
+    margin-top: 0px;
+}
+}
+/* Light Mode (Default) */
+.fas.fa-bars {
+    color: #333; /* لون الأيقونة في الوضع الافتراضي */
+  }
+  
+  /* Dark Mode */
+  .dark-mode .fas.fa-bars {
+    color: #e0e0e0; /* لون الأيقونة في الوضع الداكن */
+  }
+  /* Light Mode (Default) */
+td {
+  background-color: #ffffff; /* خلفية بيضاء */
+  color: #333; /* نص غامق */
+}
+
+/* Dark Mode */
+.dark-mode td {
+  background-color: #3a3a3a; /* خلفية داكنة */
+  color: #e0e0e0; /* نص فاتح */
+}
+/* Light Mode (Default) */
+.sorting_1 {
+    background-color: #ffffff; /* خلفية بيضاء */
+    color: #333; /* نص غامق */
+  }
+  
+/* Dark Mode */
+.dark-mode .sorting_1 {
+    background-color: #3a3a3a !important; /* خلفية داكنة */
+    color: #e0e0e0 !important; /* نص فاتح */
 }
