@@ -1,15 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>التقارير </title>
+    <title>لوحة التحكم</title>
     <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 <body>
- <div class="header">
+    <div class="header">
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
@@ -107,60 +108,54 @@
 
     <div class="content">
         <div class="breadcrumb-container">
-            <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - التقارير 
-                    <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
-                </div>
-                <hr class="breadcrumb-divider">
-                <div class="breadcrumb-path">
-                    <a href="rental-report.html">التقارير </a>
-                    <p>/</p>
-                    <a href="index.html">الرئيسية</a>
-                    <i class="fas fa-chart-line"></i>
-                </div>
-            </div>
-        </div>
+           <div class="breadcrumb">
+               <div class="breadcrumb-item">الصلاحيات -  إنشاء صلاحية
+                   <a id="lf" href="Permissions.html"><i class="fa-solid fa-circle-right"></i></a>
+               </div>
+               <hr class="breadcrumb-divider">
+               <div class="breadcrumb-path">
+                   <a href="add-Permissions.html"> إنشاء صلاحية</a>
+                   <p>/</p>
+                   <a href="Permissions.html">الصلاحيات</a>
+                   <i class="fa-solid fa-square-plus"></i>
+               </div>
+           </div>
+       </div>
+       <form class="rental-form" enctype="multipart/form-data">
+           <label for="apartment">خواص النظام :</label>
+          <select id="apartment" name="apartment" required>
+               <option value="">اختر </option>
+               <option value="1"> 1</option>
+               <option value="2"> 2</option>
+           </select>
 
-        <div class="dashboard">
-            <h2>إدارة التقارير </h2>
-            <div class="row">
-                <div class="card">
-                    <i class="fas fa-chart-pie fa-2x"></i>
-                    <h2>تقرير مصاريف الشقق</h2>
-                    <button class="details-btn" onclick="window.location.href='expenses-report.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                   </button> 
-                </div>
-                <div class="card">
-                    <i class="fas fa-file-signature fa-2x"></i>
-                    <h2>تقرير الإيجار</h2>
-                    <button class="details-btn" onclick="window.location.href='Rent-report.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                   </button> 
-                </div>
-                <div class="card">
-                    <i class="fas fa-file-alt fa-2x"></i>
-                    <h2>تقرير دفع الإيجار </h2>
-                    <button class="details-btn" onclick="window.location.href='Rent-payment-report.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                </div>
-                <div class="card">
-                    <i class="fas fa-user-tag fa-2x"></i>
-                    <h2>تقرير التأجير من المالك </h2>
-                    <button class="details-btn" onclick="window.location.href='Rental-report-from-owner.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-money-bill fa-2x"></i>
-                    <h2>تقرير النثرية  </h2>
-                    <button class="details-btn" onclick="window.location.href='Sundry-report.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                   </button> 
-                </div>
-            </div>
-        </div>
-    </div>
 
+           <label for="deposit">اسم الصلاحية:</label>
+           <input type="text" id="deposit" name="deposit" step="0.01" required>
+<label class="switchs">
+  <input type="checkbox">
+  <span class="sliders">جميع خواص النظام</span>
+</label><label class="switchs">
+  <input type="checkbox">
+  <span class="sliders">قراءة</span>
+</label><label class="switchs">
+  <input type="checkbox">
+  <span class="sliders">كتابة</span>
+</label>
+<label class="switchs">
+  <input type="checkbox">
+  <span class="sliders">تعديل</span>
+</label><label class="switchs">
+  <input type="checkbox">
+  <span class="sliders">الكل</span>
+</label>
+
+
+
+           <button type="submit">حفظ</button>
+
+       </form>
+   </div>
 
 <script src="script.js"></script>
 

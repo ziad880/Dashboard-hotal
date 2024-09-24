@@ -1,15 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>التقارير </title>
+    <title>لوحة التحكم</title>
     <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 <body>
- <div class="header">
+    <div class="header">
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
@@ -108,59 +109,35 @@
     <div class="content">
         <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - التقارير 
+                <div class="breadcrumb-item">الرئيسية - الصلاحيات 
                     <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="rental-report.html">التقارير </a>
+                    <a href="Permissions.html">الصلاحيات </a>
                     <p>/</p>
                     <a href="index.html">الرئيسية</a>
-                    <i class="fas fa-chart-line"></i>
+                    <i class="fas fa-check-circle"></i>
                 </div>
             </div>
         </div>
-
+        
         <div class="dashboard">
-            <h2>إدارة التقارير </h2>
+            <h2 > الصلاحيات</h2>
             <div class="row">
                 <div class="card">
-                    <i class="fas fa-chart-pie fa-2x"></i>
-                    <h2>تقرير مصاريف الشقق</h2>
-                    <button class="details-btn" onclick="window.location.href='expenses-report.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                   </button> 
+                    <i  class="fa-solid fa-square-plus fa-2x"></i> 
+                    <h2> إنشاء صلاحية</h2>
+                <button onclick="window.location.href='add-Permissions.html';" class="details-btn"> انتقال <i class="fas fa-arrow-left"></i></button>
                 </div>
                 <div class="card">
-                    <i class="fas fa-file-signature fa-2x"></i>
-                    <h2>تقرير الإيجار</h2>
-                    <button class="details-btn" onclick="window.location.href='Rent-report.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                   </button> 
-                </div>
-                <div class="card">
-                    <i class="fas fa-file-alt fa-2x"></i>
-                    <h2>تقرير دفع الإيجار </h2>
-                    <button class="details-btn" onclick="window.location.href='Rent-payment-report.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                </div>
-                <div class="card">
-                    <i class="fas fa-user-tag fa-2x"></i>
-                    <h2>تقرير التأجير من المالك </h2>
-                    <button class="details-btn" onclick="window.location.href='Rental-report-from-owner.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-money-bill fa-2x"></i>
-                    <h2>تقرير النثرية  </h2>
-                    <button class="details-btn" onclick="window.location.href='Sundry-report.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                   </button> 
+                    <i class="fa-solid fa-receipt fa-2x"></i>
+                    <h2> جميع الصلاحيات</h2>
+                <button onclick="window.location.href='all-Permissions.html';" class="details-btn"> انتقال <i class="fas fa-arrow-left"></i></button>
                 </div>
             </div>
         </div>
     </div>
-
 
 <script src="script.js"></script>
 

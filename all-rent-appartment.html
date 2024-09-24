@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>جميع الشقق المؤجرة</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 
 </head>
 <body>
@@ -68,10 +69,18 @@
                     <i class="fas fa-building"></i> 
                     <span>الشقق</span>
                 </a>
-             
+            </li>
+            <li class="sidebar-item-with-submenu">
+                <a href="outlay.html" class="sidebar-item">
+<i class="fa-solid fa-money-bill"></i>
+                    <span>المصاريف</span>
+                </a>
             </li>
             <li><a href="rental.html" class="sidebar-item">
                 <i class="fas fa-calendar-check"></i> <span>التأجير</span>
+            </a></li>
+                        <li><a href="rent-from-owner.html" class="sidebar-item">
+                <i class="fa-solid fa-building-user"></i> <span>تأجير من المالك</span>
             </a></li>
             <li><a href="contracts.html" class="sidebar-item">
                 <i class="fas fa-file-signature"></i> <span>العقود</span>
@@ -87,6 +96,12 @@
             </a></li>
             <li><a href="system-cards.html" class="sidebar-item">
                 <i class="fas fa-credit-card"></i> <span>بطاقات النظام</span>
+            </a></li>            
+            <li><a href="account.html" class="sidebar-item">
+                <i class="fas fa-user"></i> <span> المستخدمين</span>
+            </a></li>
+            <li><a href="Permissions.html" class="sidebar-item">
+                <i class="fas fa-check-circle"></i> <span> الصلاحيات</span>
             </a></li>
         </ul>
     </nav>
@@ -113,13 +128,22 @@
             <thead>
                 <tr>
                     <th>الإجراءات</th>
+                    <th> وصل الدفع</th>
                     <th>المستخدم</th>
                     <th>التاريخ</th>
-                    <th>ربح المكتب</th>
                     <th>المبلغ المتبقي</th>
                     <th>المبلغ المدفوع</th>
                     <th>المبلغ الكلي</th>
-                    <th>اسم الشقة</th>
+                    <th> العمولة</th>
+                    <th> المصاريف</th>
+
+                    <th>مبلغ الايجار الشهري</th>
+
+                    <th>مدة التأجبر</th>
+
+                    <th>طريقة الدفع</th>
+                    <th>نوع التعاقد </th>
+                    <th> الشقة</th>
                 </tr>
                 
             </thead>
@@ -131,28 +155,46 @@
                         <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
                         <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل التأجير</button>
                     </td>
+                    <td>
+                       <button class="btn-disable"><i class="fas fa-download"></i>  </button>
+                    </td>
                     <td>محمد حامد</td>
                     <td>18/9/2024</td>
+                    <td>3000</td>
+                    <td>7000</td>
+                    <td>10000</td>
+                    <td>1000</td>
                     <td>1000</td>
                     <td>5000</td>
-                    <td>5000</td>
-                    <td>10000</td>
+                    <td>سنه</td>
+                    <td>نقدي</td>
+                    <td>سابق</td>
+
                     <td>شقة 1</td>
                 </tr>
                 
-                <tr>
+                 <tr>
                     <td class="action-btns">
                         <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
                         <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
                         <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل التأجير</button>
                     </td>
-                    <td>زياد أيمن</td>
-                    <td>18/9/2024</td>
-                    <td>1500</td>
-                    <td>5000</td>
-                    <td>10000</td>
+                    <td>
+                       <button class="btn-disable"><i class="fas fa-download"></i>  </button>
+                    </td>
+                    <td>زياد ايمن</td>
+                    <td>20/9/2024</td>
+                    <td>8000</td>
+                    <td>7000</td>
                     <td>15000</td>
-                    <td>شقة 2</td>
+                    <td>1000</td>
+                    <td>1000</td>
+                    <td>5000</td>
+                    <td>4 شهور</td>
+                    <td>بنك</td>
+                    <td>لاحق</td>
+
+                    <td>شقة 1</td>
                 </tr>
                 
                 <!-- المزيد من الصفوف -->
