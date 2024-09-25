@@ -2288,13 +2288,19 @@ input:checked + .sliders:before {
         width: 100%; 
     }
      .charts-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start; 
-    margin: 20px 0;
-    padding-left: 20%; 
+        display: flex;
+        flex-wrap: wrap;
+        margin: 30px 30px;
+        padding-left: 35px;
 }
-    
+    .chart-title {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+        padding-right: 10%; /* إضافة مساحة فارغة على اليمين */
+
+}
 }
 
 /* تنسيق العناوين */
@@ -2303,7 +2309,6 @@ input:checked + .sliders:before {
     font-size: 1.2em;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #333;
         padding-right: 5%; /* إضافة مساحة فارغة على اليمين */
 
 }
