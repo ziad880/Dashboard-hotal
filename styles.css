@@ -219,7 +219,6 @@ a{
 }
 
 .sidebar-menu li {
-    padding: 15px;
     color: #ecf0f1;
     cursor: pointer;
     display: flex;
@@ -462,7 +461,6 @@ a{
 }
 
 .sidebar-menu li {
-    padding: 15px;
     color: #ecf0f1;
     cursor: pointer;
     display: flex;
@@ -495,7 +493,7 @@ a{
     background-color: #2980b9;
     border: none;
     color: #ffffff;
-    padding: 10px;
+    padding: 1px;
     cursor: pointer;
 }
 
@@ -758,9 +756,7 @@ body.dark-mode {
 .sidebar-menu li {
   background-color: #ffffff;
   color: #333;
-    
-    padding-top: 8px;
-    padding-bottom: 8px;
+
 
 }
 
@@ -1140,7 +1136,6 @@ table {
 
 
 th, td {
-    padding: 12px;
     text-align: center;
     font-size: 14px; /* حجم الخط الأساسي */
 }
@@ -1323,7 +1318,6 @@ th {
   }
   
   #apartments-table th, #apartments-table td {
-    padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
   }
@@ -1518,10 +1512,6 @@ table.dataTable tbody tr {
 
 table.dataTable tbody tr.selected {
     background-color: #b0bed9
-}
-
-table.dataTable tbody th,table.dataTable tbody td {
-    padding: 8px 10px
 }
 
 table.dataTable.row-border tbody th,table.dataTable.row-border tbody td,table.dataTable.display tbody th,table.dataTable.display tbody td {
@@ -1955,7 +1945,7 @@ button:hover {
     margin-top: 0;
     }
     .btn-print,.btn-disable,.btn-export ,.btn-edit{
-        font-size: 12px; /* تصغير حجم الخط */
+        font-size: 10px; /* تصغير حجم الخط */
         padding: 5px 10px; /* تقليل حجم التباعد الداخلي */
         border-radius: 3px; /* تغيير حواف الزر */
         width: auto; /* تعديل العرض */
@@ -1963,7 +1953,7 @@ button:hover {
     }
     
     .btn-print i,.btn-disable,.btn-export ,.btn-edit{
-        font-size: 10px; /* تصغير حجم الأيقونة */
+        font-size: 5px; /* تصغير حجم الأيقونة */
     }
 .btn-export{
     margin-bottom: 0;
@@ -2016,12 +2006,14 @@ td {
 }
 #apartments-table {
     width: 100%;
-
+overflow-x: auto;
+    white-space: nowrap;
 }
 
 #apartments-table th, 
 #apartments-table td {
     text-align: center; /* محاذاة النصوص في الوسط */
+    font-size: .9em;
 }
 
 /* تخصيص التصميم للهواتف */
@@ -2053,6 +2045,7 @@ td {
     border: 1px solid #ccc; /* إطار */
     padding: 10px 20px;
     border-radius: 4px;
+
     cursor: pointer;
 }
 
@@ -2077,6 +2070,7 @@ td {
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
+
 }
 
 /* Hover Effect in Light Mode */
@@ -2273,14 +2267,21 @@ input:checked + .sliders:before {
  .charts-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; 
-    margin: 20px 0;
-    padding-right: 1%; 
+    margin-right: 160px;
+padding-left: 110px;
 }
 
 .chart-container {
     width: 45%;
     margin-bottom: 20px;
+}
+@media (max-width: 1220px) {
+     .charts-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 180px;
+padding-left: 60px;
+}
 }
 
 @media (max-width: 768px) {
@@ -2302,33 +2303,6 @@ input:checked + .sliders:before {
 
 }
 }
-@media (max-width: 1250px) {
-    .chart-container {
-        width: 70%;
-    }
-
-    .charts-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 20px 20px; /* تصغير الهوامش */
-        padding-left: 20px; /* تقليل المسافة الداخلية */
-        justify-content: space-between; /* توزيع العناصر بالتساوي */
-    }
-
-    .chart {
-        flex: 1 1 22%; /* تصغير حجم العنصر إلى 22% من العرض المتاح */
-        margin: 8px; /* تصغير الهامش حول العنصر */
-    }
-
-    .chart-title {
-        text-align: center;
-        font-size: 0.9em; /* تقليل حجم الخط أكثر */
-        margin-bottom: 8px;
-        font-weight: bold;
-        padding-right: 5%; /* تقليل المساحة الفارغة */
-    }
-}
-
 
 /* تنسيق العناوين */
 .chart-title {
@@ -2343,4 +2317,16 @@ input:checked + .sliders:before {
 canvas {
     width: 90% !important;
     height: 400px !important; /* ضبط ارتفاع الرسم البياني */
+}
+.fa-solid.fa-bell{
+cursor: pointer;
+padding-right:20px;
+padding-left: 20px;
+}
+.jhgjh{
+color: rgba(98, 255, 0, 0.993);
+
+}
+.sorting_1{
+    padding: 10px;
 }
