@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المصاريف</title>
+    <title>الملف الشخصي</title>
     <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
  <div class="header">
@@ -112,36 +111,81 @@
     <div class="content">
         <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - المصاريف
+                <div class="breadcrumb-item">الرئيسية - الملف الشخصي  
                     <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
-                <div class="breadcrumb-path">
-                    <a href="outlay.html">المصاريف</a>
-                    <p>/</p>
-                    <a href="index.html">الرئيسية</a>
-                    <i class="fa-solid fa-money-bill"></i>
-                </div>
+               
             </div>
         </div>
 
-        <div class="dashboard">
-            <h2> المصاريف </h2>
-            <div class="row">
-                <div class="card">
-                    <i  class="fa-solid fa-square-plus fa-2x"></i> 
-                    <h2> إضافة مصاريف</h2>
-   <button class="details-btn" onclick="window.location.href='add-outlay.html';">
- انتقال   <i class="fas fa-arrow-left"></i></button>                </div>
-                <div class="card">
-<i class="fa-solid fa-receipt fa-2x"></i>
-                    <h2>جميع  المصاريف</h2>
-                                        <button class="details-btn" onclick="window.location.href='all-outlay.html';">
-  انتقال <i class="fas fa-arrow-left"></i></button>
+<div class="profile-container">
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="profile-image">
+                <img src="user-photo.jpg" alt="صورة المستخدم">
+            </div>
+            <h2 class="profile-name">Admin </h2>
+        </div>
+
+        <div class="profile-info">
+            <div class="input-group">
+                <label for="profile-email">البريد الإلكتروني:</label>
+                <div class="input-wrapper">
+                    <input type="email" id="profile-email" value="user@example.com" readonly>
+                    <button class="edit-btn" onclick="enableEditing('profile-email')"><i class="fa-solid fa-square-pen"></i></button>
                 </div>
             </div>
+
+            <div class="input-group">
+                <label for="profile-phone">رقم الهاتف:</label>
+                <div class="input-wrapper">
+                    <input type="text" id="profile-phone" value="+966123456789" readonly>
+                    <button class="edit-btn" onclick="enableEditing('profile-phone')"><i class="fa-solid fa-square-pen"></i></button>
+                </div>
+            </div>
+
+            <button id="save-btn" class="save-btn" style="display: none;" onclick="saveChanges()">حفظ</button>
         </div>
     </div>
+</div>
+
+</div>
+<script>
+function enableEditing(fieldId) {
+    const inputField = document.getElementById(fieldId);
+    inputField.removeAttribute('readonly'); 
+    inputField.style.backgroundColor = "#fff"; 
+    inputField.style.cursor = "text"; 
+
+    document.getElementById('save-btn').style.display = 'block';
+
+    inputField.addEventListener('input', function() {
+        document.getElementById('save-btn').style.display = 'block'; 
+    });
+}
+
+function saveChanges() {
+    const emailInput = document.getElementById('profile-email');
+    const phoneInput = document.getElementById('profile-phone');
+
+    emailInput.setAttribute('readonly', true);
+    emailInput.style.backgroundColor = "#c7c3c3";
+    emailInput.style.cursor = "not-allowed";
+
+    phoneInput.setAttribute('readonly', true);
+    phoneInput.style.backgroundColor = "#c7c3c3";
+    phoneInput.style.cursor = "not-allowed";
+
+    document.getElementById('save-btn').style.display = 'none';
+
+    console.log("Saved Email:", emailInput.value);
+    console.log("Saved Phone:", phoneInput.value);
+}</script>
+<script src="script.js"></script>
+
+</body>
+</html>
 
 
 <script src="script.js"></script>

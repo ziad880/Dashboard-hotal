@@ -46,7 +46,15 @@ function toggleDarkMode(isDarkMode) {
     document.querySelectorAll('.buttons-pdf').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
     document.querySelectorAll('.buttons-html5').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
     document.querySelectorAll('.btn-export').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
-}
+
+// Toggle dark mode for DataTables buttons
+document.querySelectorAll('.dt-button').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+document.querySelectorAll('.buttons-pdf').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+document.querySelectorAll('.buttons-html5').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+document.querySelectorAll('.btn-export').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+document.querySelectorAll('#ic').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+
+  }
     
 function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
@@ -74,4 +82,26 @@ document.querySelectorAll('.permission-checkbox').forEach(checkbox => {
     const allChecked = Array.from(document.querySelectorAll('.permission-checkbox')).every(cb => cb.checked);
     selectAll.checked = allChecked;
   });
+});
+// فتح البوب أب
+function openPaymentPopup() {
+    document.getElementById('paymentPopup').style.display = 'flex';
+}
+
+// إغلاق البوب أب
+function closePaymentPopup() {
+    document.getElementById('paymentPopup').style.display = 'none';
+}
+
+// تصدير إيصال الدفع (مؤقت - يمكن تعديلها لاحقاً لتصدير فعلي)
+function exportReceipt() {
+    alert('تم تصدير إيصال الدفع!');
+}
+
+// التعامل مع نموذج الدفع
+document.getElementById('paymentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // هنا يمكنك إضافة منطق الدفع
+    alert('تم دفع الإيجار بنجاح!');
+    closePaymentPopup();
 });

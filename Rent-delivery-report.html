@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جميع الشقق</title>
+    <title>  تقرير تسليم الإيجار</title>
     <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 
 </head>
 <body>
@@ -112,22 +113,20 @@
  <div class="content">
      <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">  الشقق -  جميع الشقق
-                    <a id="lf" href="apartments.html"><i class="fa-solid fa-circle-right"></i></a>
+                <div class="breadcrumb-item">  التقارير -     تقرير تسليم الإيجار 
+                    <a id="lf" href="rental-report.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
                     
-                    <a href="all-apartments.html">جميع الشقق</a>
+                    <a href="Rent-delivery-report.html">تقرير   تقرير تسليم الإيجار </a>
                     <p>/</p>
-                    <a href="apartments.html">الشقق</a>
-                    <i class="fas fa-list"></i>
+                    <a href="rental-report.html"> التقارير</a>
+                    <i class="fas fa-check-circle"></i>
                 </div>
             </div>
         </div>
-
-    <table id="apartments-table" class="display">
-         <div class="date-filter">
+  <div class="date-filter">
             <span class="filter-icon" id="filter-icon"><i class="fas fa-filter"></i> تصفية</span>
             <div class="date-picker" id="date-picker">
                 <label for="start-date">من:</label>
@@ -136,46 +135,36 @@
                 <input type="date" id="end-date" name="end-date" title="تاريخ النهاية">
                 <button id="filter-button">تصفية</button>
             </div>
-        </div>
+        </div>>
+    <table id="apartments-table" class="display">
         <thead>
-            <tr>
-                <th>الخيارات</th>
-                <th>الاسم</th>
-                <th> النوع</th>
-                <th>الحالة</th>
-                <th> التاريخ</th>
-                <th> المستخدم</th>
-
-            </tr>
-            
+        <tr>
+            <th> المستخدم</th>
+            <th> المالك</th>
+            <th> الشقة</th>
+            <th> التاريخ</th>
+            <th>المبلغ الاجمالي TL</th>
+            <th>المبلغ الاجمالي $</th>
+        </tr>
         </thead>
         <tbody>
         <!-- الصفوف الديناميكية -->
         <tr>
-            <td class="action-btns">
-                <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
-                <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
-            </td>
-            <td>admin</td>
-            <td>2024-09-10</td>
-            <td>نشطة</td>
-            <td> 2024-09-12</td>
+            <td> -</td>
             <td>-</td>
-
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
         </tr>
         <tr>
-            <td class="action-btns">
-                <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
-                <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
-            </td>
-            <td>admin</td>
-            <td>2024-09-12</td>
-            <td>غير نشطة</td>
-            <td> 2024-09-12</td>
-            <td> -</td>
-
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
         </tr>
-        
         <!-- المزيد من الصفوف -->
         </tbody>
     </table>
@@ -205,8 +194,7 @@
 <!-- Buttons for Excel and PDF export -->
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
-
-    <script>
+ <script>
         pdfMake.fonts = {
     Cairo: {
         normal: 'Cairo-Regular.ttf',
@@ -216,8 +204,8 @@
       $(document).ready(function() {
     $('#apartments-table').DataTable({
         dom: 'Bfrtip',
-        buttons: [ 
-            {
+        buttons: [
+              {
                         extend: 'excelHtml5',
                         text: '<i class="fas fa-file-excel"></i> تصدير Excel',
                         className: 'btn-export',
@@ -242,7 +230,7 @@
         ]
     });
 });
-  $('#filter-icon').click(function() {
+ $('#filter-icon').click(function() {
                 $('#date-picker').toggle();
             });
 
@@ -279,10 +267,8 @@
                 $(this).removeClass('highlight');
                 $(this).removeAttr('data-title'); // إزالة البيانات عند الخروج
             });
-        
     </script>
 <script src="script.js"></script>
 <script src="vfs_fonts.js"></script>
-
 </body>
 </html>

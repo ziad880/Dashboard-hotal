@@ -1323,7 +1323,7 @@ th {
   }
   
   #apartments-table th {
-    background-color: #000000;
+    background-color: #A9A8A7;
   }
   
   /* Dark Mode */
@@ -1953,7 +1953,7 @@ button:hover {
     }
     
     .btn-print i,.btn-disable,.btn-export ,.btn-edit{
-        font-size: 5px; /* تصغير حجم الأيقونة */
+        font-size: 10px; /* تصغير حجم الأيقونة */
     }
 .btn-export{
     margin-bottom: 0;
@@ -2065,7 +2065,7 @@ overflow-x: auto;
 /* Light Mode (الوضع العادي) */
 .btn-export {
     background-color: #ffffff; /* خلفية بيضاء */
-    color: #333; /* لون النص داكن */
+    color: #555555; /* لون النص داكن */
     border: 1px solid #ccc; /* إطار */
     padding: 10px 20px;
     border-radius: 4px;
@@ -2268,7 +2268,8 @@ input:checked + .sliders:before {
     display: flex;
     flex-wrap: wrap;
     margin-right: 160px;
-padding-left: 110px;
+
+margin-top: 4em;
 }
 
 .chart-container {
@@ -2299,7 +2300,7 @@ padding-left: 60px;
     font-size: 1.2em;
     margin-bottom: 10px;
     font-weight: bold;
-        padding-right: 20%; /* إضافة مساحة فارغة على اليمين */
+    padding-right: 20%; /* إضافة مساحة فارغة على اليمين */
 
 }
 }
@@ -2308,9 +2309,9 @@ padding-left: 60px;
 .chart-title {
     text-align: center;
     font-size: 1.2em;
-    margin-bottom: 10px;
+    margin-bottom: 1em;
     font-weight: bold;
-        padding-right: 5%; /* إضافة مساحة فارغة على اليمين */
+        padding-right: 10%; /* إضافة مساحة فارغة على اليمين */
 
 }
 
@@ -2323,10 +2324,252 @@ cursor: pointer;
 padding-right:20px;
 padding-left: 20px;
 }
-.jhgjh{
-color: rgba(98, 255, 0, 0.993);
 
-}
+
 .sorting_1{
     padding: 10px;
+}
+
+
+/* Styling for the overlay background */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it stays above other elements */
+}
+
+/* Popup container */
+.popup-content {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 400px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+    text-align: right; /* RTL alignment */
+    direction: rtl;
+}
+
+/* Title styling */
+.popup-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #000;
+    text-align: center;
+}
+
+/* Form field styling */
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="date"],
+input[type="number"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+/* On focus, change border color */
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+    border-color: #007bff; /* Light blue focus */
+    outline: none;
+}
+
+/* Styling for the popup buttons */
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+
+
+.btn-submit:hover {
+    background-color: #218838;
+}
+
+
+
+
+/* Animation for popup appearance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Profile Card */
+.profile-card {
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    width: 1500px;
+    height: 600px;
+    max-width: 100%;
+    text-align: center;
+}
+
+/* Profile Header with Image and Name */
+.profile-header {
+    margin-bottom: 30px;
+}
+
+.profile-image img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile-name {
+    font-size: 26px;
+}
+
+/* Profile Info Fields */
+.profile-info .input-group {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+/* Input and Button wrapper */
+.input-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.profile-info input {
+    width: 85%;
+    padding: 12px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #d2cece;
+    cursor: not-allowed;
+}
+
+.profile-info input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.edit-btn {
+
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+        color: #007bff;
+
+}
+
+
+.edit-btn:hover {
+
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+        color: #002c5c;
+
+}
+
+
+      .date-filter {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .filter-icon {
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+
+
+
+        .date-picker {
+            display: none;
+            position: absolute;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 100;
+        }
+
+        .date-picker label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .date-picker input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .date-picker button {
+            width: 100%;
+            padding: 8px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+th{
+    color: #000;
+}
+/* تنسيق الجدول */
+.highlight {
+    background-color: #f1f1f1;
+}
+.dropbtn:hover{
+    background: none;
+}
+button{
+    background-color: #4b4b4b;
+}
+.rental-form button{
+    background-color: #4b4b4b;
 }

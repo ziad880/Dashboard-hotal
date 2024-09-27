@@ -6,7 +6,7 @@
     <title>جميع الشقق المؤجرة</title>
     <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+   
 
 </head>
 <body>
@@ -14,7 +14,9 @@
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
-                <span class="user-name">Admin</span>
+                <a href="profile.html">
+    <span class="user-name">Admin</span>
+</a> 
                 <div class="dropdown">
                     <button class="dropbtn">▼</button>
                     <div class="dropdown-content">
@@ -56,7 +58,9 @@
                 <a href="system-settings.html"><i class="fa-solid fa-gear"></i></a>
             </div>
             <div class="user-info">
-                <span class="user-name">Admin</span>
+                <a href="profile.html">
+    <span class="user-name">Admin</span>
+</a> 
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
             </div>
         </div>
@@ -122,7 +126,16 @@
                 </div>
             </div>
         </div>
-
+  <div class="date-filter">
+            <span class="filter-icon" id="filter-icon"><i class="fas fa-filter"></i> تصفية</span>
+            <div class="date-picker" id="date-picker">
+                <label for="start-date">من:</label>
+                <input type="date" id="start-date" name="start-date" title="تاريخ البداية">
+                <label for="end-date">إلى:</label>
+                <input type="date" id="end-date" name="end-date" title="تاريخ النهاية">
+                <button id="filter-button">تصفية</button>
+            </div>
+        </div>
         <!-- جدول الشقق -->
         <table style="display: block;" id="apartments-table" class="display">
             <thead>
@@ -130,20 +143,28 @@
                     <th>الإجراءات</th>
                     <th> وصل الدفع</th>
                     <th>المستخدم</th>
+                    <th> الشقة</th>
                     <th>التاريخ</th>
-                    <th>المبلغ المتبقي</th>
-                    <th>المبلغ المدفوع</th>
-                    <th>المبلغ الكلي</th>
-                    <th> العمولة</th>
-                    <th> المصاريف</th>
+                    <th>نوع التعاقد </th>
+                    <th>المبلغ المتبقي <i class="fa-solid fa-dollar-sign"></i></th>
+                    <th>المبلغ المتبقي TL</th>
+                    <th>المبلغ المدفوع <i class="fa-solid fa-dollar-sign"></i></th>
+                    <th>المبلغ المدفوع TL</th>
+                    <th>المبلغ الكلي <i class="fa-solid fa-dollar-sign"></i></th>
+                    <th>المبلغ الكلي TL</th>
+                    <th> العمولة <i class="fa-solid fa-dollar-sign"></i></th>
+                    <th> العمولة TL</th>
+                    <th> المصاريف <i class="fa-solid fa-dollar-sign"></i></th>
+                    <th> المصاريف TL</th>
 
-                    <th>مبلغ الايجار الشهري</th>
+                    <th>مبلغ الايجار الشهري <i class="fa-solid fa-dollar-sign"></i></th>
+                    <th>مبلغ الايجار الشهري TL</th>
 
                     <th>مدة التأجبر</th>
 
                     <th>طريقة الدفع</th>
-                    <th>نوع التعاقد </th>
-                    <th> الشقة</th>
+
+
                 </tr>
                 
             </thead>
@@ -152,49 +173,60 @@
                 <tr>
                     <td class="action-btns">
                         <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
-                        <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
+<button class="btn-pay" onclick="openPaymentPopup()"><i class="fas fa-cash-register"></i> دفع الايجار</button>
                         <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل </button>
                     </td>
                     <td>
                        <button class="btn-disable"><i class="fas fa-download"></i>  </button>
                     </td>
-                    <td>محمد حامد</td>
-                    <td>18/9/2024</td>
-                    <td>3000</td>
-                    <td>7000</td>
-                    <td>10000</td>
-                    <td>1000</td>
-                    <td>1000</td>
-                    <td>5000</td>
-                    <td>سنه</td>
-                    <td>نقدي</td>
-                    <td>سابق</td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
 
-                    <td>شقة 1</td>
                 </tr>
                 
                  <tr>
                     <td class="action-btns">
                         <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
-                        <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
+<button class="btn-pay" onclick="openPaymentPopup()"><i class="fas fa-cash-register"></i> دفع الايجار</button>
                         <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل </button>
                     </td>
                     <td>
                        <button class="btn-disable"><i class="fas fa-download"></i>  </button>
                     </td>
-                    <td>زياد ايمن</td>
-                    <td>20/9/2024</td>
-                    <td>8000</td>
-                    <td>7000</td>
-                    <td>15000</td>
-                    <td>1000</td>
-                    <td>1000</td>
-                    <td>5000</td>
-                    <td>4 شهور</td>
-                    <td>بنك</td>
-                    <td>لاحق</td>
-
-                    <td>شقة 1</td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
                 </tr>
                 
                 <!-- المزيد من الصفوف -->
@@ -211,7 +243,34 @@
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    
+    <!-- زر دفع الإيجار في الجدول -->
+
+<!-- البوب أب فورم الخاص بدفع الإيجار -->
+<div id="paymentPopup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <h2>دفع الإيجار</h2>
+        <form id="paymentForm">
+            <label for="paymentDate">التاريخ:</label>
+            <input type="date" id="paymentDate" required>
+
+            <label for="amount">المبلغ:</label>
+            <input type="number" id="amount" required>
+
+            <label for="notes">ملاحظات:</label>
+            <textarea id="notes"></textarea>
+
+            <label for="attachment">إرفاق ملف:</label>
+            <input type="file" id="attachment">
+
+            <div class="popup-buttons">
+                <button style="margin: 0;" type="submit" class="btn-submit">دفع</button>
+                
+                <button type="button" class="btn-close" onclick="closePaymentPopup()">إغلاق</button>
+                <button style="margin: 0;" type="button" class="btn-export" onclick="exportReceipt()">تصدير إيصال الدفع</button>
+            </div>
+        </form>
+    </div>
+</div>
     <script>
         pdfMake.fonts = {
     Cairo: {
@@ -248,6 +307,43 @@
         ]
     });
 });
+ $('#filter-icon').click(function() {
+                $('#date-picker').toggle();
+            });
+
+            // دالة تصفية الجدول حسب التاريخ
+            $('#filter-button').click(function() {
+                var startDate = $('#start-date').val();
+                var endDate = $('#end-date').val();
+
+                $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+                    var date = new Date(data[3]); // تاريخ من العمود 4 (index 3)
+                    if (
+                        (startDate === "" && endDate === "") ||
+                        (startDate === "" && date <= new Date(endDate)) ||
+                        (new Date(startDate) <= date && endDate === "") ||
+                        (new Date(startDate) <= date && date <= new Date(endDate))
+                    ) {
+                        return true;
+                    }
+                    return false;
+                });
+
+                table.draw();
+                $('#date-picker').hide(); // إخفاء نافذة اختيار التاريخ بعد التصفية
+            });
+
+            // إضافة تأثير التحويم على التواريخ
+            $('#apartments-table tbody').on('mouseenter', 'td', function() {
+                var title = $(this).attr('title');
+                if (title) {
+                    $(this).addClass('highlight');
+                    $(this).attr('data-title', title); // حفظ التاريخ في البيانات
+                }
+            }).on('mouseleave', 'td', function() {
+                $(this).removeClass('highlight');
+                $(this).removeAttr('data-title'); // إزالة البيانات عند الخروج
+            });
     </script>
 <script src="script.js"></script>
 <script src="vfs_fonts.js"></script>
