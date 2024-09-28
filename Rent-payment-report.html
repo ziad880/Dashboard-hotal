@@ -126,7 +126,56 @@
                 </div>
             </div>
         </div>
+ <div style="display: flex;flex-direction: row-reverse;" class="date-filter">
+    <select id="filter" class="filter-select">
+        <option value="form">التاريخ الى</option>
+        <option value="january">يناير</option>
+        <option value="february">فبراير</option>
+        <option value="march">مارس</option>
+        <option value="april">ابريل</option>
+        <option value="may">مايو</option>
+        <option value="june">يونيو</option>
+        <option value="july">يوليو</option>
+        <option value="august">اغسطس</option>
+        <option value="september">سبتمبر</option>
+        <option value="october">اكتوبر</option>
+        <option value="november">نوفمبر</option>
+        <option value="december">ديسمبر</option>
+      </select>
 
+            <select id="filter" class="filter-select">
+                <option value="form">التاريخ من</option>
+                <option value="january">يناير</option>
+                <option value="february">فبراير</option>
+                <option value="march">مارس</option>
+                <option value="april">ابريل</option>
+                <option value="may">مايو</option>
+                <option value="june">يونيو</option>
+                <option value="july">يوليو</option>
+                <option value="august">اغسطس</option>
+                <option value="september">سبتمبر</option>
+                <option value="october">اكتوبر</option>
+                <option value="november">نوفمبر</option>
+                <option value="december">ديسمبر</option>
+              </select>
+
+
+                  <select id="filter" class="filter-select">
+                    <option value="form">الملاك</option>
+                    <option value="other">1</option>
+                    <option value="other">2</option>
+                    <option value="other">3</option>
+                  </select>
+                  <select id="filter" class="filter-select">
+                    <option value="form">الشقق</option>
+                    <option value="other">1</option>
+                    <option value="other">2</option>
+                    <option value="other">3</option>
+                  </select>
+
+
+              
+        </div>
     <!-- جدول الشقق -->
     <table style="display: block;" id="apartments-table" class="display">
         <thead>
@@ -226,35 +275,56 @@
         bold: 'Cairo-Bold.ttf',
     }
 };
-      $(document).ready(function() {
-    $('#apartments-table').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-              {
-                        extend: 'excelHtml5',
-                        text: '<i class="fas fa-file-excel"></i> تصدير Excel',
-                        className: 'btn-export',
-                        titleAttr: 'تصدير إلى Excel'
-                    },
-            {
-                extend: 'pdfHtml5',
-                text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
-                className: 'btn-export',
-                titleAttr: 'تصدير إلى PDF',
-                customize: function (doc) {
-                    doc.defaultStyle = {
-                        font: 'Cairo',
-                        alignment: 'center'  // محاذاة النص لليمين
-                    };
-                    doc.styles.tableHeader = {
-                        font: 'Cairo',
-                        alignment: 'center'
-                    };
+     $(document).ready(function() {
+        $('#apartments-table').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'excelHtml5',
+                    text: '<i class="fas fa-file-excel"></i> تصدير Excel',
+                    className: 'btn-export',
+                    titleAttr: 'تصدير إلى Excel'
+                },
+                {
+                    extend: 'pdfHtml5',
+                    text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
+                    className: 'btn-export',
+                    titleAttr: 'تصدير إلى PDF',
+                    customize: function (doc) {
+                        doc.defaultStyle = {
+                            font: 'Cairo',
+                            alignment: 'center'
+                        };
+                        doc.styles.tableHeader = {
+                            font: 'Cairo',
+                            alignment: 'center'
+                        };
+                    }
+                }
+            ],
+            language: {
+                search: "بحث:",
+                lengthMenu: "عرض _MENU_ مدخلات",
+                info: "عرض _START_ إلى _END_ من أصل _TOTAL_ مدخلات",
+                infoEmpty: "لا توجد مدخلات متاحة",
+                infoFiltered: "(تمت التصفية من _MAX_ إجمالي المدخلات)",
+                loadingRecords: "جاري التحميل...",
+                zeroRecords: "لم يتم العثور على نتائج",
+                emptyTable: "لا توجد بيانات متاحة في الجدول",
+                paginate: {
+                    first: "الأول",
+                    last: "الأخير",
+                    next: "التالي",
+                    previous: "السابق"
+                },
+                buttons: {
+                    excel: "تصدير Excel",
+                    pdf: "تصدير PDF",
+                    print: "طباعة"
                 }
             }
-        ]
+        });
     });
-});
     </script>
 <script src="script.js"></script>
 <script src="vfs_fonts.js"></script>

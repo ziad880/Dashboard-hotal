@@ -140,8 +140,12 @@
     <table id="apartments-table" class="display">
         <thead>
             <tr>
-                <th>الشقة</th>
+                <th>الإجراءات</th>
+                <th> وصل الدفع</th>
                 <th>المستخدم</th>
+                
+                <th>الشقة</th>
+
                 <th>المالك</th>
 
                 <th>التاريخ</th>
@@ -153,6 +157,14 @@
         </thead>
         <tbody>
         <tr>
+            <td class="action-btns">
+                <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
+<button class="btn-pay" onclick="openPaymentPopup()"><i class="fas fa-cash-register"></i> دفع </button>
+                <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل </button>
+            </td>
+            <td>
+                <button class="btn-disable"><i class="fas fa-download"></i>  </button>
+             </td>
             <td> -</td>
             <td>-</td>
             <td>-</td>
@@ -161,6 +173,14 @@
             <td>-</td>
         </tr>
         <tr>
+            <td class="action-btns">
+                <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
+<button class="btn-pay" onclick="openPaymentPopup()"><i class="fas fa-cash-register"></i> دفع </button>
+                <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل </button>
+            </td>
+            <td>
+                <button class="btn-disable"><i class="fas fa-download"></i>  </button>
+             </td>
             <td> -</td>
             <td> -</td>
             <td>-</td>
@@ -197,6 +217,33 @@
 <!-- Buttons for Excel and PDF export -->
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+
+<!-- البوب أب فورم الخاص بدفع الإيجار -->
+<div id="paymentPopup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <h2>دفع </h2>
+        <form id="paymentForm">
+            <label for="paymentDate">التاريخ:</label>
+            <input type="date" id="paymentDate" required>
+
+            <label for="amount">المبلغ:</label>
+            <input type="number" id="amount" required>
+
+            <label for="notes">ملاحظات:</label>
+            <textarea id="notes"></textarea>
+
+            <label for="attachment">إرفاق ملف:</label>
+            <input type="file" id="attachment">
+
+            <div class="popup-buttons">
+                <button style="margin: 0;" type="submit" class="btn-submit">دفع</button>
+                
+                <button type="button" class="btn-close" onclick="closePaymentPopup()">إغلاق</button>
+                <button style="margin: 0;" type="button" class="btn-export" onclick="exportReceipt()">تصدير إيصال الدفع</button>
+            </div>
+        </form>
+    </div>
+</div>
 <script>
     pdfMake.fonts = {
         Cairo: {
@@ -205,7 +252,7 @@
         }
     };
 
-    $(document).ready(function() {
+   $(document).ready(function() {
         $('#apartments-table').DataTable({
             dom: 'Bfrtip',
             buttons: [
@@ -220,49 +267,40 @@
                     text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
                     className: 'btn-export',
                     titleAttr: 'تصدير إلى PDF',
-                      customize: function (doc) {
-                    doc.defaultStyle = {
-                        font: 'Cairo',
-                        alignment: 'center' 
-                    };
-                    doc.styles.tableHeader = {
-                        font: 'Cairo',
-                        alignment: 'center'
-                    };
-                },
-                    action: function (e, dt, button, config) {
-                        // حفظ النصوص الأصلية
-                        const originalTexts = {};
-
-                        // حفظ النصوص الأصلية لجميع العناصر
-                        $('*').each(function() {
-                            const element = $(this);
-                            const tagName = element.prop("tagName").toLowerCase();
-
-                            // فقط نصوص العناصر التي تحتوي على نص
-                            if (element.is(':visible') && (tagName === 'td' || tagName === 'th' || tagName === 'p' || tagName === 'span')) {
-                                originalTexts[element.selector] = element.text();
-                                const reversedText = reverseWords(element.text());
-                                element.text(reversedText); // عكس النص
-                            }
-                        });
-
-                        // تصدير PDF
-                        $.fn.dataTable.ext.buttons.pdfHtml5.action.call(this, e, dt, button, config);
-
-                        // إعادة النصوص الأصلية بعد التصدير
-                        $.each(originalTexts, function(selector, originalText) {
-                            $(selector).text(originalText); // إعادة النص الأصلي
-                        });
+                    customize: function (doc) {
+                        doc.defaultStyle = {
+                            font: 'Cairo',
+                            alignment: 'center'
+                        };
+                        doc.styles.tableHeader = {
+                            font: 'Cairo',
+                            alignment: 'center'
+                        };
                     }
                 }
-            ]
+            ],
+            language: {
+                search: "بحث:",
+                lengthMenu: "عرض _MENU_ مدخلات",
+                info: "عرض _START_ إلى _END_ من أصل _TOTAL_ مدخلات",
+                infoEmpty: "لا توجد مدخلات متاحة",
+                infoFiltered: "(تمت التصفية من _MAX_ إجمالي المدخلات)",
+                loadingRecords: "جاري التحميل...",
+                zeroRecords: "لم يتم العثور على نتائج",
+                emptyTable: "لا توجد بيانات متاحة في الجدول",
+                paginate: {
+                    first: "الأول",
+                    last: "الأخير",
+                    next: "التالي",
+                    previous: "السابق"
+                },
+                buttons: {
+                    excel: "تصدير Excel",
+                    pdf: "تصدير PDF",
+                    print: "طباعة"
+                }
+            }
         });
-
-        // دالة لعكس النصوص
-        function reverseWords(text) {
-            return text.split(' ').reverse().join(' ');
-        }
     });
      $('#filter-icon').click(function() {
                 $('#date-picker').toggle();
